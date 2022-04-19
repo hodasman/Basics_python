@@ -1,10 +1,8 @@
-
 import requests
 import datetime
 
 
-def currency_rates_adv(code: str):
-    """возвращает курс валюты `code` по отношению к рублю"""
+def currency_rates_adv(code):
     r = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
     if r['Valute'].get(code.upper()) == None:
         result_value = None

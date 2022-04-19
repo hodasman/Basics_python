@@ -8,7 +8,7 @@ def currency_rates(code: str) -> float:
     if r['Valute'].get(code.upper()) == None:
         result_value = None
     else:
-        result_value = (r['Valute'].get(code.upper())['Value'], r['Date'])
+        result_value = (r['Valute'].get(code.upper())['Value'])
 
     return result_value
 
