@@ -3,6 +3,7 @@ klasses = ['9А', '7В', '9Б', '9В', '8Б', '10А']
 
 
 def check_gen(tutors: list, klasses: list):
+    '''Возвращает генератор, который генерирует кортежи состоящие из элементов первого и второго списка'''
     for i in range(len(tutors)):
         if i >= len(klasses):
             yield (tutors[i], None)
