@@ -1,0 +1,6 @@
+my_project [settings,mainapp,authapp] []
+my_project/settings [] [__init__.py,dev.py,prod.py]
+my_project/mainapp [mainapp,tempplates] [__init__.py,models.py,views.py,base.html,index.html]
+my_project/authapp [templates] [__init__.py,models.py,views.py]
+my_project/authapp/templates [authapp] []
+my_project/authapp/templates/authapp [] [base.html,index.html]
