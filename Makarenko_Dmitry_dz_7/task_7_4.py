@@ -8,9 +8,12 @@ def direct_scanner(folder: str) -> dict:
      этой границы, но больше предыдущей.
      '''
     file_size = []
-    for root, dirs, files in os.walk(folder): # Сканируем папку и добавляем значения размеров файлов в список
-        for file in files:
-            file_size.append(os.stat(os.path.join(root, file)).st_size)
+    try:
+        for root, dirs, files in os.walk(folder): # Сканируем папку и добавляем значения размеров файлов в список
+            for file in files:
+                file_size.append(os.stat(os.path.join(root, file)).st_size)
+    except EOFError as e:
+        print(f'Error: {e}')
     max_size = 0
     for size in file_size: # Определяем максимальный размер файла
         if size > max_size:
