@@ -8,8 +8,12 @@ def get_parse_attrs(line: str) ->tuple:
     RE_SOURSE = re.compile(r'/[a-z]+/\w+')
     RE_CODE = re.compile(r'(?<=HTTP/1.1"\s)(\d+)')
     RE_SIZE = re.compile(r'(?<=HTTP/1.1"\s\d{3}\s)(\d+)')
-    result_corteg = (RE_IP.search(line).group(), RE_DATE.search(line).group(), RE_TYPE.search(line).group(), RE_SOURSE.search(line).group(), RE_CODE.search(line).group(), RE_SIZE.search(line).group())
-    return result_corteg
+    try:
+        result_corteg = (RE_IP.search(line).group(), RE_DATE.search(line).group(), RE_TYPE.search(line).group(), RE_SOURSE.search(line).group(), RE_CODE.search(line).group(), RE_SIZE.search(line).group())
+        return result_corteg
+    except AttributeError as e:
+        print(f'Одно из значений не найдено: {e}')
+
 
 
 with open('nginx_logs.txt', 'r', encoding='utf-8') as fr:

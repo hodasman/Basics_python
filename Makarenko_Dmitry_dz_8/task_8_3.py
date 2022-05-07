@@ -15,4 +15,4 @@ def type_logger(func):
 def calc_cube(x):
    return x ** 3
 
-a = calc_cube(5, 7, 10, num=6, int=12)
+a = calc_cube(5, 7, 10)
