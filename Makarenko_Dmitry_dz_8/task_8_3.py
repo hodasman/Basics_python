@@ -6,6 +6,7 @@ def type_logger(func):
       for val in kwargs.values():
          list.append(f'{func.__name__}({val}: {type(val)}) = {func(val)}: {type(func(val))}')
       print(', '.join(list))
+      return (', '.join(list))
    return wrapper
 
 
