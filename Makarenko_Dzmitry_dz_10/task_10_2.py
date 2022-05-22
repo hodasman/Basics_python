@@ -32,8 +32,6 @@ class Coat(Clothes):
         return float("{0:.2f}".format(self.size / 6.5 + 0.5))
 
 
-
-
 class Costume(Clothes):
     def __init__(self, height: float):
         self.height = height
